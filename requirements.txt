@@ -1,0 +1,106 @@
+# =============================================================================
+# requirements.txt
+# Project : Enterprise SIEM Lab
+#           Deployed a Wazuh SIEM Cluster to Aggregate Logs and
+#           Create Custom Alert Dashboards
+# Author  : Ayan Dutta
+# Python  : 3.11.x
+#
+# Install : pip install -r requirements.txt
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 1. NOTEBOOK RUNTIME
+#    Required to open and execute Ayan Dutta_Enterprise SIEM Lab.ipynb
+# -----------------------------------------------------------------------------
+
+# Jupyter environment
+notebook>=7.0.0           # Classic Jupyter Notebook server
+jupyterlab>=4.0.0         # JupyterLab interface (recommended)
+ipython>=8.12.0           # Interactive Python kernel (display, HTML, Markdown)
+ipykernel>=6.25.0         # IPython kernel for Jupyter
+
+# -----------------------------------------------------------------------------
+# 2. DATA PROCESSING
+#    Used in Cells 9.2, 12, 13 — alert DataFrame operations and aggregations
+# -----------------------------------------------------------------------------
+
+numpy>=1.26.0             # Numerical arrays, linspace, random seed
+pandas>=2.1.0             # DataFrame, groupby, aggregation, pd.to_datetime
+
+# -----------------------------------------------------------------------------
+# 3. DATA VISUALISATION
+#    Used in Cells 3.1, 11.1–11.4, 13.1 — all four dashboard panels
+#    and architecture diagram
+# -----------------------------------------------------------------------------
+
+matplotlib>=3.8.0         # Core plotting (pyplot, patches, gridspec, colors)
+
+# -----------------------------------------------------------------------------
+# 4. HTTP / REST API CLIENT
+#    Used in Cell 9.1 — WazuhAPIClient (Wazuh Manager REST API + Elasticsearch)
+# -----------------------------------------------------------------------------
+
+requests>=2.31.0          # HTTP requests, HTTPBasicAuth, JWT token auth
+urllib3>=2.0.0            # Underlying HTTP library for requests (TLS / verify=False)
+
+# -----------------------------------------------------------------------------
+# 5. DOCUMENT GENERATION
+#    Used by generate_siem_report.py — produces Enterprise_SIEM_Lab_Report.docx
+# -----------------------------------------------------------------------------
+
+python-docx>=1.1.0        # .docx creation (paragraphs, tables, styles, XML)
+
+# -----------------------------------------------------------------------------
+# 6. PDF GENERATION
+#    Used by generate_siem_pdf.py — produces Enterprise_SIEM_Lab_Report.pdf
+# -----------------------------------------------------------------------------
+
+reportlab>=4.0.0          # PDF generation (SimpleDocTemplate, Paragraph, Table)
+
+# -----------------------------------------------------------------------------
+# 7. STANDARD LIBRARY MODULES (built-in — no installation required)
+#    Listed here for documentation purposes only.
+# -----------------------------------------------------------------------------
+
+# os           — file system operations
+# sys          — Python runtime info
+# time         — sleep() for log simulation burst intervals
+# json         — Elasticsearch DSL query serialisation / es_queries.json
+# random       — random IP / user selection in LogSimulator
+# logging      — syslog-format log file writing in LogSimulator
+# datetime     — timestamp generation (datetime, timedelta)
+# textwrap     — text wrapping utilities
+# subprocess   — simulate_fim_event() shell command; pip install check
+# pathlib      — Path() for cross-platform file I/O
+# typing       — List, Dict, Optional type hints
+# xml.etree.ElementTree — ossec.conf XML parsing (Cell 6.1)
+
+# =============================================================================
+# OPTIONAL — EXTENDED INTEGRATIONS
+# Uncomment if you extend the project with these modules.
+# =============================================================================
+
+# elasticsearch>=8.10.0   # Official Elasticsearch Python client (direct ES calls)
+# opensearch-py>=2.3.0    # OpenSearch Python client (Wazuh Indexer alternative)
+# misp-stix>=2.4.0        # MISP threat intelligence feed integration
+# pymisp>=2.4.177         # PyMISP for MISP API access
+# thehive4py>=1.8.0       # TheHive SOAR integration client
+# jinja2>=3.1.0           # Templating for automated report generation
+
+# =============================================================================
+# QUICK SETUP
+# =============================================================================
+#
+#   # Create and activate a virtual environment (recommended)
+#   python -m venv .venv
+#   .venv\Scripts\activate          # Windows
+#   source .venv/bin/activate       # Linux / macOS
+#
+#   # Install all dependencies
+#   pip install -r requirements.txt
+#
+#   # Launch the notebook
+#   jupyter lab "Ayan Dutta_Enterprise SIEM Lab.ipynb"
+#
+# =============================================================================
